@@ -1,0 +1,38 @@
+version: '3.4'
+
+services:
+  api:
+    image: ${DOCKER_REGISTRY-}api
+    build:
+      context: .
+      dockerfile: Api/Dockerfile
+    ports:
+     - 80:80
+     - 443:443
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=LOCALDEVPASS
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+    volumes:
+      - ~/.aspnet/https:/https:ro
+    depends_on:
+      - zipkin
+    networks: 
+      - demo-network
+
+  zipkin:
+    image: openzipkin/zipkin:latest
+    container_name: zipkin
+    environment:
+      - STORAGE_TYPE=mem
+    expose:
+      - 9411
+    ports:
+      - 9411:9411
+    networks:
+      - demo-network
+
+networks:
+  demo-network:
+    external: false
