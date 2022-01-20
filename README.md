@@ -12,15 +12,13 @@ In this demo, i m using [OpenTelemetry](https://devblogs.microsoft.com/dotnet/op
 > 
 > - Type `dotnet dev-certs https --clean` to clean local certificates
 >
-> - Type `dotnet dev-certs https --trust -ep $env:USERPROFILE\.aspnet\https\aspnetapp.pfx -p LOCALDEVPASS` to generate local pfx certificate
+> - Type `dotnet dev-certs https --trust -ep $env:USERPROFILE\.aspnet\https\aspnetapp.pfx -p LOCALDEVPASS`
 >
-> - If you have changed the password in the previous command, you need to put the same password in `docker-compose.debug.yml`
+> - Type `docker-compose -f "docker-compose.debug.yml" up -d`
 >
-> - Type `docker-compose -f "docker-compose.debug.yml" up -d` in your terminal
+> - Open [zipkin url](http://localhost:9411/zipkin) and [swagger](https://localhost/swagger/index.html) in your browser
 >
-> - Open [zipkin url](http://localhost:9411/zipkin) in your browser
->
-> - Type `docker compose down` in your terminal
+> - Type `docker compose down`
 
 >
 **`References`** :
