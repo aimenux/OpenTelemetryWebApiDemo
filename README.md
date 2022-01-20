@@ -1,3 +1,5 @@
+[![.NET](https://github.com/aimenux/OpenTelemetryWebApiDemo/actions/workflows/ci.yml/badge.svg)](https://github.com/aimenux/OpenTelemetryWebApiDemo/actions/workflows/ci.yml)
+
 # OpenTelemetryWebApiDemo
 ```
 Using OpenTelemetry with webapi applications
@@ -28,6 +30,6 @@ In this demo, i m using [OpenTelemetry](https://devblogs.microsoft.com/dotnet/op
 > :zap: [How to run ASP.NET Core 3.1 over HTTPS in Docker using Linux Containers](https://tomssl.com/how-to-run-asp-net-core-3-1-over-https-in-docker-using-linux-containers/)
 >
 
-![OpenTelemetryWorkerDemo](Screenshots/OpenTelemetryWorkerDemo.png)
+![OpenTelemetryWebApiDemo](Screenshots/OpenTelemetryWebApiDemo.png)
 
 **`Tools`** : vs22, net 6.0, ef, docker, opentelemetry, zipkin
